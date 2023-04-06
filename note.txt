@@ -1,0 +1,45 @@
+toastify stuff:
+    https://www.npmjs.com/package/react-toastify
+    scroll down to see the syntax
+
+2 important files:  index.js, App.js
+    index.js is the "entry point"
+    there is a root div in the public/index.html 
+
+
+root.render(<React.StrictMode> <App /> </React.StrictMode>);
+    The <App /> above ??
+
+How to define a component? 2 ways
+    using class component, ex: class App extends Component{...}         ->class component
+    define as a function, ex: function App(){...}, const App=()=>{...}  ->functional component
+
+onchange event occurs when value of an html element is changed
+    <element onchange="myScript">
+    
+element=event.target -> get the element where the event occurred
+    target: the DOM element that triggers an event. 
+    currentTarget: the DOM element that the event listener is listening on.
+
+checked property of checkbox
+    n:      element.checked->true
+    n+1:    element.checked->false
+
+
+<input type="checkbox" checked={includeUppercase}>
+    -> Click the checkbox but it stays the same
+    -> Warning: You provided a `value` prop to a form field without an `onChange` 
+    handler. This will render a read-only field. If the field should be mutable 
+    use `defaultValue`. Otherwise, set either `onChange` or `readOnly`.
+    
+<input type="checkbox" checked={includeUppercase} onChange={()=>{setIncludeUppercase()}}>
+    -> The checkbox can now change, but the state {includeUppercase} still stays the same
+    
+
+Tested and see that onChange{()=>{setIncludeUppercase()}} will simply set the includeUppercase to 
+    undefined, while it should have a value
+
+
+flex css:
+    .container{display:flex}  ->  direct children auto becomes flexible items
+    other properties: flex-direction, flex-wrap, justify-content
